@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:layout_marginStart="20dp">
+
+    <TextView
+        android:text="@string/ruta"
+        android:id="@+id/nameTextViewItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Title" />
+
+    <TextView
+        android:text="@string/latitud"
+        android:id="@+id/latitudTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Text"/>
+
+    <TextView
+        android:text="@string/longitud"
+        android:id="@+id/longitudTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Text"/>
+
+</LinearLayout>

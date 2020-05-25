@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Routes</string>
+    <string name="error_load_data">Se produjo un error al cargar los datos</string>
+    <string name="latitud">Latitud</string>
+    <string name="longitud">Longitud</string>
+    <string name="ruta">Ruta</string>
+</resources>
