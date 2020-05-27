@@ -12,7 +12,7 @@ import com.example.routes.viewmodel.ListViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-//pRUEBA
+
     lateinit var viewModel: ListViewModel
     private val routesAdapter = RouteListAdapter(arrayListOf())
 

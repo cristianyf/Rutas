@@ -2,16 +2,24 @@ package com.example.routes.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.routes.di.DaggerApiComponent
 import com.example.routes.model.Routes
 import com.example.routes.model.RoutesServices
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
+import javax.inject.Inject
 
 class ListViewModel : ViewModel() {
 
-    private val routesServices = RoutesServices()
+    @Inject
+    lateinit var routesServices: RoutesServices
+
+    init {
+        DaggerApiComponent.create().inject(this)
+    }
+
     private val disposable = CompositeDisposable()
 
     val routesVm = MutableLiveData<List<Routes>>()
