@@ -1,13 +1,12 @@
 package com.example.routes.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.routes.R
-import com.example.routes.model.Routes
 import com.example.routes.viewmodel.ListViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -39,7 +38,8 @@ class MainActivity : AppCompatActivity() {
         viewModel.routesVm.observe(this, Observer { routes ->
             routes?.let {
                 routesListRecyclerView.visibility = View.VISIBLE
-                routesAdapter.updateRoutes(it) }
+                routesAdapter.updateRoutes(it)
+            }
         })
 
         viewModel.routesLoadErrorVm.observe(this, Observer { isError ->
@@ -48,8 +48,8 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.loadingVm.observe(this, Observer { isLoading: Boolean? ->
             isLoading?.let {
-                loading_view_progressBar.visibility = if(it) View.VISIBLE else View.GONE
-                if (it){
+                loading_view_progressBar.visibility = if (it) View.VISIBLE else View.GONE
+                if (it) {
                     listErrorTextView.visibility = View.GONE
                     routesListRecyclerView.visibility = View.GONE
                 }
