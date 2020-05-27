@@ -1,6 +1,7 @@
 package com.example.routes.di
 
 import com.example.routes.model.RoutesApi
+import com.example.routes.model.RoutesServices
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -20,5 +21,10 @@ class ApiModule {
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build()
             .create(RoutesApi::class.java)
+    }
+
+    @Provides
+    fun provideRoutesService(): RoutesServices {
+        return RoutesServices()
     }
 }
